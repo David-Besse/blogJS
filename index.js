@@ -1,7 +1,9 @@
 let emailInput;
 let passwordInput;
+let usernameInput;
 let submitButton;
 let accessToken;
+let userId;
 
 function loadPage(page) {
   // Enlever "pages/" et ".html" de l'URL
