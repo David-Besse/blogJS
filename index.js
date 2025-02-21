@@ -52,7 +52,6 @@ function loadPage(page) {
   }
 
   let postId;
-  let editPostid;
   let urlParams;
   if (newUrl.includes("article")) {
     urlParams = new URLSearchParams(window.location.search);
@@ -64,9 +63,9 @@ function loadPage(page) {
 
   if (newUrl.includes("edit-post")) {
     urlParams = new URLSearchParams(window.location.search);
-    editPostid = urlParams.get("postId");
-    if (editPostid) {
-      history.pushState(null, "", `edit-post?postId=${editPostid}`);
+    postId = urlParams.get("postId");
+    if (postId) {
+      history.pushState(null, "", `edit-post?postId=${postId}`);
     }
   }
 
@@ -82,9 +81,12 @@ function loadPage(page) {
 
       // Modifier l'URL après le chargement de la page
       if (postId) {
-        history.pushState(null, "", `article?postId=${postId}`);
-      } else if (editPostid) {
-        history.pushState(null, "", `edit-post?postId=${editPostid}`);
+        if (newUrl.includes("edit-post")) {
+          history.pushState(null, "", `edit-post?postId=${postId}`);
+        }
+        if (newUrl.includes("article")) {
+          history.pushState(null, "", `article?postId=${postId}`);
+        }
       } else {
         history.pushState(null, "", newUrl);
       }

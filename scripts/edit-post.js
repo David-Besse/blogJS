@@ -2,8 +2,14 @@
 async function initEditPostPage() {
   console.log("init edit post page");
 
-  const postId = getPostIdFromUrl();
+  const postId = window.location.search.split("=")[1];
   const postData = await fetchPostData(postId);
+
+  if (!postData) {
+    console.error("Aucun post trouvé avec l'ID fourni.");
+    return;
+  }
+
   populateForm(postData);
 
   const editForm = document.getElementById("editForm");
@@ -30,9 +36,9 @@ async function fetchPostData(postId) {
 }
 
 function populateForm(postData) {
-  document.getElementById("newtitle").value = postData.title;
-  document.getElementById("newcontent").value = postData.content;
-  document.getElementById("newimage").value = postData.image_url;
+  document.getElementById("newtitle").placeholder = postData.title;
+  document.getElementById("newcontent").placeholder = postData.content;
+  document.getElementById("newimage").placeholder = postData.image_url;
 }
 
 async function updatePost(event, postId) {
@@ -68,4 +74,4 @@ async function updatePost(event, postId) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", initEditPostPage);
+document.addEventListener("DOMContentLoaded", initEditPostPage());
