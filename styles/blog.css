@@ -1,0 +1,26 @@
+blog {
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    flex-direction: column; /* Aligne les articles verticalement */
+    align-items: center; /* Centre horizontalement */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    color: #333; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+}
+
+article {
+    background-color: #fff; /* Couleur de fond des articles */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    margin: 10px 0; /* Espacement entre les articles */
+    padding: 15px; /* Espacement intérieur des articles */
+    width: 80%; /* Largeur des articles */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+h2 {
+    color: #007BFF; /* Couleur du titre */
+}
+
+p {
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+}

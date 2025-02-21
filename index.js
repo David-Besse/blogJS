@@ -4,6 +4,10 @@ let usernameInput;
 let submitButton;
 let accessToken;
 let userId;
+let articles;
+let titleInput;
+let contentInput;
+let imageInput;
 
 function loadPage(page) {
   // Enlever "pages/" et ".html" de l'URL

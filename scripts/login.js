@@ -33,6 +33,20 @@ async function login(event) {
       accessToken = data.access_token;
       localStorage.setItem("accessToken", accessToken);
       console.log("accessToken:", accessToken);
+
+      Swal.fire({
+        icon: "success",
+        title: "Connexion réussie !",
+        text: "Vous êtes maintenant connecté !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    } else {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
   } catch (error) {
     console.error("Error during login:", error);
