@@ -50,14 +50,22 @@ function loadPage(page) {
         }
       });
 
-      // Charger le fichier JS
-      const script = document.createElement("script");
-      script.src = `scripts/${newUrl}.js`;
-      script.defer = true;
-      
-      // Vérifier si le script est déjà chargé
-      if (!document.querySelector(`script[src='${script.src}']`)) {
-        document.body.appendChild(script);
+      // Vérifier si le script home.js est déjà chargé
+      if (newUrl === "home" && !document.querySelector("script[src='scripts/home.js']")) {
+        const homeScript = document.createElement("script");
+        homeScript.src = "scripts/home.js";
+        homeScript.defer = true;
+        document.body.appendChild(homeScript);
+      } else if (newUrl !== "home") {
+        // Charger le fichier JS pour d'autres pages
+        const script = document.createElement("script");
+        script.src = `scripts/${newUrl}.js`;
+        script.defer = true;
+
+        // Vérifier si le script est déjà chargé
+        if (!document.querySelector(`script[src='${script.src}']`)) {
+          document.body.appendChild(script);
+        }
       }
     })
     .catch((error) => {
