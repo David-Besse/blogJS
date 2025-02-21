@@ -16,6 +16,7 @@ async function initBlogPage() {
       articleElement.innerHTML = `
                 <h2>${article.title}</h2>
                 <p>${article.content}</p>
+                <p>${article.author.username}</p>
                 <button class="button-${article.id}" data-id="${article.id}">Lire l'article</button> 
               `;
       blogContainer.appendChild(articleElement);

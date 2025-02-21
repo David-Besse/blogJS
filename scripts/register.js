@@ -37,6 +37,13 @@ async function register(event) {
     });
 
     if (!response.ok) {
+      Swal.fire({
+        icon: "error",
+        title: "Création echouée !",
+        text: "Utilisateur deja existant ou identifiant/mot de passe incorrect",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
@@ -44,7 +51,6 @@ async function register(event) {
 
     if (data) {
       localStorage.setItem("user", data);
-      console.log("user:", data);
     }
   } catch (error) {
     console.error("Error during login:", error);

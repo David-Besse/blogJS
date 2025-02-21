@@ -58,7 +58,7 @@
 }
 
 /* Styles pour le bouton de modification */
-#editButton {
+.edit-button {
     padding: 10px 15px; /* Espacement interne */
     background-color: #28a745; /* Couleur de fond */
     color: white; /* Couleur du texte */
@@ -69,6 +69,21 @@
     margin-top: 15px; /* Marge supérieure */
 }
 
-#editButton:hover {
+.edit-button:hover {
     background-color: #218838; /* Couleur de fond au survol */
+}
+
+.delete-button {
+    padding: 10px 15px; /* Espacement interne */
+    background-color: #a72828; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    font-size: 1em; /* Taille de la police */
+    margin-top: 15px; /* Marge supérieure */
+}
+
+.delete-button:hover {
+    background-color: #882121; /* Couleur de fond au survol */
 }

@@ -29,9 +29,21 @@ async function fetchPostData(postId) {
   });
 
   if (!response.ok) {
+    Swal.fire({
+      icon: "error",
+      title: "Modification echouée !",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
+  Swal.fire({
+    icon: "success",
+    title: "Modification effectuée !",
+    showConfirmButton: false,
+    timer: 1500,
+  });
   return await response.json();
 }
 

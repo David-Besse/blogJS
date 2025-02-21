@@ -24,6 +24,13 @@ async function login(event) {
     });
 
     if (!response.ok) {
+      Swal.fire({
+        icon: "error",
+        title: "Connexion echouée !",
+        text: "Email ou mot de passe incorrect",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 

@@ -32,10 +32,22 @@ async function createPost(event) {
     });
 
     if (!response.ok) {
+      Swal.fire({
+        icon: "error",
+        title: "Création echouée !",
+        text: "Une erreur s'est produite lors de la création de l'article",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    alert("Article créé avec succès !");
+    Swal.fire({
+      icon: "success",
+      title: "Article créé avec succès !",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     loadPage("pages/blog.html");
   } catch (error) {
     console.error("Erreur lors de la création de l'article :", error);
