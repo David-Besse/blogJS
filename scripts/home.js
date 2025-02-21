@@ -5,6 +5,10 @@ function initHomePage() {
     loadPage("pages/home.html");
   });
 
+  document.getElementById("loadProfil").addEventListener("click", () => {
+    loadPage("pages/profil.html");
+  });
+
   document.getElementById("loadConnexion").addEventListener("click", () => {
     loadPage("pages/login.html");
   });

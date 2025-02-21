@@ -46,6 +46,9 @@ function loadPage(page) {
     case "pages/edit-post.html":
       newUrl = "edit-post";
       break;
+    case "pages/profil.html":
+      newUrl = "profil";
+      break;
     default:
       newUrl = page;
       break;
