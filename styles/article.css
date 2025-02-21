@@ -1,64 +1,74 @@
+/* Styles de l'en-tête de l'article */
 .article-header {
-    background-color: #f8f9fa;
-    border: 2px solid #d1e7dd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
+    background-color: #e9ecef; /* Couleur de fond */
+    border: 2px solid #cfd8dc; /* Bordure */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 60px; /* Espacement interne */
+    text-align: center; /* Alignement du texte */
 }
 
+/* Styles du titre de l'article */
 .article-title {
-    font-size: 2em;
-    color: #6c757d;
+    font-size: 2em; /* Taille de la police */
+    color: #495057; /* Couleur du texte */
+    text-align: left; /* Alignement à gauche */
 }
 
+/* Styles de l'auteur et de la date */
 .article-author, .article-date {
-    font-size: 1em;
-    color: #adb5bd;
+    font-size: 0.8em; /* Taille de la police réduite */
+    color: #adb5bd; /* Couleur du texte */
+    text-align: right; /* Alignement à droite */
 }
 
+/* Styles du contenu de l'article */
 .article-content {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #f0e68c;
-    border-radius: 5px;
-    background-color: #fff3cd;
+    min-width: 600px;
+    margin: 2em; /* Marge externe */
+    padding: 1em; /* Espacement interne */
+    border: 1px solid #ffeeba; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f8f9fa; /* Couleur de fond */
 }
 
+/* Styles de l'introduction */
 .article-introduction {
-    margin-bottom: 30px;
+    margin-top: 2em;
+    margin-bottom: 30px; /* Marge inférieure */
 }
 
 .introduction-title {
-    font-size: 1.5em;
-    color: #444;
-    margin-bottom: 15px;
+    font-size: 1.5em; /* Taille de la police */
+    color: #444; /* Couleur du texte */
+    margin-bottom: 15px; /* Marge inférieure */
 }
 
 .introduction-text {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 1em; /* Taille de la police */
+    line-height: 1.5; /* Hauteur de ligne */
+    margin-bottom: 60px; /* Marge inférieure */
 }
 
+/* Styles de l'image de l'article */
 .article-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    max-width: 400px; /* Largeur maximale modifiée */
+    height: auto; /* Hauteur automatique */
+    display: block; /* Affichage en bloc */
+    margin: 0 auto; /* Centrage */
 }
 
-/* Ajout de styles pour le bouton de modification */
+/* Styles pour le bouton de modification */
 #editButton {
-    padding: 10px 15px;
-    background-color: #007bff; /* Couleur de fond */
+    padding: 10px 15px; /* Espacement interne */
+    background-color: #28a745; /* Couleur de fond */
     color: white; /* Couleur du texte */
     border: none; /* Pas de bordure */
     border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Curseur en main */
+    cursor: pointer; /* Curseur pointer */
     font-size: 1em; /* Taille de la police */
-    margin-top: 15px; /* Marge au-dessus */
+    margin-top: 15px; /* Marge supérieure */
 }
 
 #editButton:hover {
-    background-color: #0056b3; /* Couleur de fond au survol */
+    background-color: #218838; /* Couleur de fond au survol */
 }

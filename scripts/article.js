@@ -28,7 +28,7 @@ async function initArticlePage() {
                 <h2 class="introduction-title">Introduction</h2>
                 <p class="introduction-text">${article.content}</p>
                 <img class="article-image" src="${
-                  article.image
+                  article.image_url
                 }" alt="Image de l'article">
             </section>
             <button id="editButton" data-id="${

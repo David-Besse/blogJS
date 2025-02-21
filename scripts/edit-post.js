@@ -36,9 +36,9 @@ async function fetchPostData(postId) {
 }
 
 function populateForm(postData) {
-  document.getElementById("newtitle").placeholder = postData.title;
-  document.getElementById("newcontent").placeholder = postData.content;
-  document.getElementById("newimage").placeholder = postData.image_url;
+  document.getElementById("newtitle").value = postData.title;
+  document.getElementById("newcontent").value = postData.content;
+  document.getElementById("newimage").value = postData.image_url;
 }
 
 async function updatePost(event, postId) {

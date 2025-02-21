@@ -1,7 +1,7 @@
 /* Styles pour les en-têtes */
 h1 {
   font-size: 3em;
-  color: whitesmoke;
+  color: #000000;
   padding: 0.4em 0;
 }
 
@@ -13,7 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  background-color: #1877f2;
+  background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
 }
 
 /* Styles pour la navigation */
@@ -23,9 +23,9 @@ nav {
 }
 
 nav ul li button {
-  background-color: #1876f281;
-  color: white;
-  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
   border-radius: 4px;
   cursor: pointer;
   height: 50px;
@@ -36,7 +36,7 @@ nav ul li button {
 }
 
 nav ul li button:hover {
-  background-color: #165eab;
+  background-color: #d9d9d9;
 }
 
 nav ul {
@@ -48,25 +48,27 @@ nav ul {
 
 nav li {
   margin: 0 20px;
+  width: 120px;
+  text-align: center;
 }
 
 nav a {
   text-decoration: none;
-  color: whitesmoke;
+  color: #000000;
   margin: 0 15px;
   padding: 5px 10px;
   border-radius: 4px;
 }
 
 nav a:hover {
-  background-color: #165eab;
-  color: #ffffff;
+  background-color: #d9d9d9;
+  color: #000000;
 }
 
 /* Styles pour le pied de page */
 footer {
-  background-color: #1877f2;
-  color: #ffffff;
+  background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
+  color: #333333;
   text-align: center;
   height: 50px;
   width: 100%;
@@ -79,4 +81,10 @@ footer {
 h2 {
   font-size: 5em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000000;
+}
+
+main {
+  background-color: #ffffff;
+  padding: 20px;
 }

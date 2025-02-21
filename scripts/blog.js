@@ -3,6 +3,9 @@ async function initBlogPage() {
 
   articles = await getPosts();
 
+  // Trier les articles par ID
+  articles.sort((a, b) => a.id - b.id);
+
   const blogContainer = document.querySelector(".blog-container");
 
   blogContainer.innerHTML = "";
