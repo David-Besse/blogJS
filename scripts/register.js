@@ -31,7 +31,7 @@ async function register(event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`,
       },
       body: userInformation,
     });
@@ -52,4 +52,4 @@ async function register(event) {
   }
 }
 
-registerPage();
+document.addEventListener("DOMContentLoaded", registerPage());

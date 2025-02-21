@@ -54,4 +54,4 @@ async function login(event) {
   }
 }
 
-initLoginPage();
+document.addEventListener("DOMContentLoaded", initLoginPage());

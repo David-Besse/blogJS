@@ -12,11 +12,25 @@ async function initBlogPage() {
       const articleElement = document.createElement("article");
       articleElement.innerHTML = `
                 <h2>${article.title}</h2>
-                <p>${article.content}</p> 
+                <p>${article.content}</p>
+                <button class="button-${article.id}" data-id="${article.id}">Lire l'article</button> 
               `;
       blogContainer.appendChild(articleElement);
+
+      const readButton = articleElement.querySelector(`.button-${article.id}`);
+      readButton.addEventListener("click", () => {
+        const postId = readButton.getAttribute("data-id");
+        window.history.pushState(null, "", `article?postId=${postId}`);
+        loadPage(`pages/article.html`);
+      });
     });
   }
+
+  // Ajouter un gestionnaire d'événements pour le bouton de création d'article
+  const createPostButton = document.getElementById("createPostButton");
+  createPostButton.addEventListener("click", () => {
+    loadPage("pages/create-post.html");
+  });
 }
 
 async function getMe() {
@@ -85,25 +99,6 @@ async function createPost() {
         Authorization: `Bearer ${accessToken}`,
       },
       body: newPost,
-    });
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching blog posts:", error);
-    return [];
-  }
-}
-
-async function getPost(postId) {
-  const url = `http://localhost:8001/api/posts/${postId}`;
-
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ post_id: postId }),
     });
     const data = await response.json();
     return data;

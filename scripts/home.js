@@ -18,4 +18,4 @@ function initHomePage() {
   });
 }
 
-initHomePage();
+document.addEventListener("DOMContentLoaded", initHomePage());

@@ -1,0 +1,64 @@
+.article-header {
+    background-color: #f8f9fa;
+    border: 2px solid #d1e7dd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.article-title {
+    font-size: 2em;
+    color: #6c757d;
+}
+
+.article-author, .article-date {
+    font-size: 1em;
+    color: #adb5bd;
+}
+
+.article-content {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #f0e68c;
+    border-radius: 5px;
+    background-color: #fff3cd;
+}
+
+.article-introduction {
+    margin-bottom: 30px;
+}
+
+.introduction-title {
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.introduction-text {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ajout de styles pour le bouton de modification */
+#editButton {
+    padding: 10px 15px;
+    background-color: #007bff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    font-size: 1em; /* Taille de la police */
+    margin-top: 15px; /* Marge au-dessus */
+}
+
+#editButton:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}

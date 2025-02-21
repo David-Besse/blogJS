@@ -4,14 +4,71 @@ let usernameInput;
 let submitButton;
 let accessToken;
 let userId;
+let article;
 let articles;
 let titleInput;
 let contentInput;
 let imageInput;
+let articleTitle;
+let articleContent;
+let articleImage;
+let articleId;
+let articleDate;
+let articleAuthor;
+let newTitleInput;
+let newContentInput;
+let newImageInput;
+let postForm;
 
 function loadPage(page) {
-  // Enlever "pages/" et ".html" de l'URL
-  const newUrl = page.replace("pages/", "").replace(".html", "");
+  let newUrl;
+
+  // Modifier l'URL en fonction de la page chargée
+  switch (page) {
+    case "pages/home.html":
+      newUrl = "home";
+      break;
+    case "pages/blog.html":
+      newUrl = "blog";
+      break;
+    case "pages/article.html":
+      newUrl = "article";
+      break;
+    case "pages/login.html":
+      newUrl = "login";
+      break;
+    case "pages/register.html":
+      newUrl = "register";
+      break;
+    case "pages/create-post.html":
+      newUrl = "create-post";
+      break;
+    case "pages/edit-post.html":
+      newUrl = "edit-post";
+      break;
+    default:
+      newUrl = page;
+      break;
+  }
+
+  let postId;
+  let editPostid;
+  let urlParams;
+  if (newUrl.includes("article")) {
+    urlParams = new URLSearchParams(window.location.search);
+    postId = urlParams.get("postId");
+    if (postId) {
+      history.pushState(null, "", `article?postId=${postId}`);
+    }
+  }
+
+  if (newUrl.includes("edit-post")) {
+    urlParams = new URLSearchParams(window.location.search);
+    editPostid = urlParams.get("postId");
+    if (editPostid) {
+      history.pushState(null, "", `edit-post?postId=${editPostid}`);
+    }
+  }
 
   fetch(page)
     .then((response) => {
@@ -22,13 +79,25 @@ function loadPage(page) {
     })
     .then((html) => {
       document.getElementById("content").innerHTML = html;
-      // Changer l'URL sans recharger la page
-      history.pushState(null, "", newUrl);
+
+      // Modifier l'URL après le chargement de la page
+      if (postId) {
+        history.pushState(null, "", `article?postId=${postId}`);
+      } else if (editPostid) {
+        history.pushState(null, "", `edit-post?postId=${editPostid}`);
+      } else {
+        history.pushState(null, "", newUrl);
+      }
 
       // Enlever les fichiers CSS précédents sauf "reset.css", "style.css" et celui de la page "home"
       const links = document.querySelectorAll("link[rel='stylesheet']");
       links.forEach((link) => {
-        if (!link.href.includes("reset.css") && !link.href.includes("style.css") && !link.href.includes("home.css") && !link.href.includes(`${newUrl}.css`)) {
+        if (
+          !link.href.includes("reset.css") &&
+          !link.href.includes("style.css") &&
+          !link.href.includes("home.css") &&
+          !link.href.includes(`${newUrl}.css`)
+        ) {
           document.head.removeChild(link);
         }
       });
@@ -51,7 +120,10 @@ function loadPage(page) {
       });
 
       // Vérifier si le script home.js est déjà chargé
-      if (newUrl === "home" && !document.querySelector("script[src='scripts/home.js']")) {
+      if (
+        newUrl === "home" &&
+        !document.querySelector("script[src='scripts/home.js']")
+      ) {
         const homeScript = document.createElement("script");
         homeScript.src = "scripts/home.js";
         homeScript.defer = true;
@@ -59,6 +131,7 @@ function loadPage(page) {
       } else if (newUrl !== "home") {
         // Charger le fichier JS pour d'autres pages
         const script = document.createElement("script");
+        console.log(`scripts/${newUrl}.js`);
         script.src = `scripts/${newUrl}.js`;
         script.defer = true;
 
@@ -73,6 +146,4 @@ function loadPage(page) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadPage("pages/home.html");
-});
+document.addEventListener("DOMContentLoaded", loadPage("pages/home.html"));
